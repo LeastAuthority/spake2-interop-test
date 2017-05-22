@@ -3,7 +3,7 @@ A harness for interoperability testing between SPAKE2 implementations.
 
 ## python-spake2 example
 
-```
+```console
 $ runhaskell TestInterop.hs ./python-spake2-interop-entrypoint.py A abc -- ./python-spake2-interop-entrypoint.py B abc
 ["./python-spake2-interop-entrypoint.py","A","abc"]
 ["./python-spake2-interop-entrypoint.py","B","abc"]
