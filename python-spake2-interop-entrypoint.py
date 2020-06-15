@@ -4,7 +4,10 @@ from __future__ import print_function, unicode_literals
 
 from sys import argv, stdout, stderr
 
-from spake2 import params
+from spake2.parameters.i1024 import Params1024
+from spake2.parameters.i2048 import Params2048
+from spake2.parameters.i3072 import Params3072
+from spake2.parameters.ed25519 import ParamsEd25519
 
 if argv[1] == b"A":
     from spake2 import SPAKE2_A as SPAKE2_SIDE
@@ -18,13 +21,13 @@ else:
 password = argv[2]
 
 PARAMS = {
-    'I1024': params.Params1024,
-    'I2048': params.Params2048,
-    'I3072': params.Params3072,
-    'Ed25519': params.ParamsEd25519,
+    'I1024': Params1024,
+    'I2048': Params2048,
+    'I3072': Params3072,
+    'Ed25519': ParamsEd25519,
 }
 
-param = params.ParamsEd25519
+param = ParamsEd25519
 if len(argv) > 3:
     try:
         param = PARAMS[argv[3]]
